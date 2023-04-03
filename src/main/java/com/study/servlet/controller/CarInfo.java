@@ -4,11 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
@@ -50,7 +48,7 @@ public class CarInfo extends HttpServlet {
 		
 		response.setContentType("appllication/json;charset=UTF-8");
 		response.getWriter().println(responseData.toString());
-		
+		System.out.println(responseData.toString());
 
 
 		
@@ -62,7 +60,7 @@ public class CarInfo extends HttpServlet {
 		ServletInputStream inputStream = request.getInputStream();
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 		String requestJson = bufferedReader.lines().collect(Collectors.joining());
-		
+		System.out.println(requestJson);
 		Gson gson = new Gson();
 		List<Map<String, String>> requestMap = gson.fromJson(requestJson, List.class);
 		PrintWriter out = response.getWriter();
