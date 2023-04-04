@@ -19,7 +19,7 @@ import com.study.servlet.service.UserServiceImpl;
 /**
  * Servlet implementation class SignIn
  */
-@WebServlet("/auth/signin")
+@WebServlet("/signin")
 public class SignIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserService userService;
